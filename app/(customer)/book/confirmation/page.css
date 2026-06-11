@@ -1,0 +1,212 @@
+.confirmation-page-container {
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5) var(--space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .confirmation-page-container {
+    padding: var(--space-12) var(--space-16) var(--space-24);
+  }
+}
+
+.success-banner-box {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.success-check-icon {
+  font-size: 4rem;
+  color: var(--color-success);
+}
+
+.success-title-main {
+  font-family: var(--font-display);
+  font-size: var(--text-size-headline-lg-mobile);
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .success-title-main {
+    font-size: var(--text-size-headline-lg);
+  }
+}
+
+.success-description-text {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-lg);
+  line-height: var(--text-lh-body-lg);
+  color: var(--color-text-secondary);
+}
+
+/* Summary Card */
+.summary-ledger-card {
+  background-color: var(--color-surface-low);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  border: thin solid var(--color-border-subtle);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: thin solid var(--color-border-subtle);
+  padding-bottom: var(--space-3);
+}
+
+.summary-section-title {
+  font-family: var(--font-display);
+  font-size: var(--text-size-headline-sm);
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+.summary-booking-id {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  background-color: var(--color-surface-high);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: thin solid var(--color-border-subtle);
+}
+
+.summary-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.summary-item-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.summary-item-label {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  color: var(--color-text-secondary);
+}
+
+.summary-item-val {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-sm);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summary-section-block {
+  border-top: thin solid var(--color-border-subtle);
+  padding-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.summary-sub-title {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-md);
+  color: var(--color-text-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--text-ls-label-md);
+}
+
+.confirmation-food-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.food-item-row-confirm {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-sm);
+  color: var(--color-text-primary);
+}
+
+.price-box-ledger {
+  background-color: var(--color-surface-high);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  border: thin solid var(--color-border);
+}
+
+.price-ledger-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-sm);
+  color: var(--color-text-secondary);
+}
+
+.confirm-total-price {
+  font-family: var(--font-display);
+  font-size: var(--text-size-headline-sm);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Action Buttons footer */
+.confirmation-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 480px) {
+  .confirmation-action-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.btn-confirm-action {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-md);
+  font-weight: 600;
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  flex: 1;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-confirm-action.primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-confirm-action.primary:hover {
+  background-color: var(--color-primary-deep);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-confirm-action.secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: thin solid var(--color-primary);
+}
+
+.btn-confirm-action.secondary:hover {
+  background-color: var(--color-surface-low);
+}

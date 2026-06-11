@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COVE - Private Rooms</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1d1c17",
+                        "primary-fixed": "#ffdbca",
+                        "outline": "#81746f",
+                        "surface-container": "#f2ede5",
+                        "on-primary": "#ffffff",
+                        "background": "#fef9f1",
+                        "tertiary-fixed": "#ffddba",
+                        "primary-fixed-dim": "#e1c0af",
+                        "secondary-fixed": "#ede1d0",
+                        "on-secondary-container": "#6a6154",
+                        "secondary-container": "#eadecd",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb867",
+                        "on-tertiary-container": "#d69547",
+                        "surface-bright": "#fef9f1",
+                        "on-surface-variant": "#4f453f",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e7e2da",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1d1c17",
+                        "on-tertiary-fixed-variant": "#673d00",
+                        "inverse-on-surface": "#f5f0e8",
+                        "inverse-surface": "#32302b",
+                        "primary-container": "#4a3428",
+                        "surface-container-high": "#ece8e0",
+                        "surface-dim": "#ded9d2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e7e2da",
+                        "on-secondary-fixed-variant": "#4d4639",
+                        "primary": "#321f14",
+                        "tertiary": "#361e00",
+                        "on-primary-container": "#bb9c8c",
+                        "surface-tint": "#73594b",
+                        "outline-variant": "#d3c3bc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#543100",
+                        "inverse-primary": "#e1c0af",
+                        "on-secondary-fixed": "#201b10",
+                        "surface-container-low": "#f8f3eb",
+                        "secondary-fixed-dim": "#d0c5b5",
+                        "secondary": "#665d50",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#29170d",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-primary-fixed-variant": "#594235",
+                        "surface": "#fef9f1",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-xl": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-xl": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #fef9f1;
+            color: #1d1c17;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for an elegant feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d3c3bc;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4a3428;
+        }
+        /* Ambient shadows */
+        .shadow-ambient {
+            box-shadow: 0 20px 40px -10px rgba(74, 52, 40, 0.08);
+        }
+        .shadow-ambient-lg {
+            box-shadow: 0 30px 60px -15px rgba(74, 52, 40, 0.12);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-24 md:pt-32 pb-24 md:pb-0">
+<!-- TopNavBar (Desktop) -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md dark:bg-on-background/80 hidden md:flex justify-between items-center px-margin-desktop py-stack-sm max-w-container-max mx-auto shadow-sm">
+<div class="flex items-center gap-8">
+<span class="font-display-xl text-display-xl text-primary dark:text-primary-fixed tracking-tighter">COVE</span>
+<ul class="flex gap-6 mt-2">
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 duration-300" href="#">Home</a></li>
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 cursor-pointer active:scale-95 duration-300" href="#">Rooms</a></li>
+<li><a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95 duration-300" href="#">Menu</a></li>
+</ul>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-widest px-6 py-3 rounded-xl hover:opacity-80 transition-opacity duration-300 cursor-pointer active:scale-95">Book Now</button>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow flex flex-col md:flex-row gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full relative">
+<!-- Left Column: Rooms Listing -->
+<div class="flex-1 flex flex-col gap-stack-lg pb-12">
+<!-- Page Header -->
+<div class="space-y-4">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-background">Our Private Rooms</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Discover tranquility in our carefully curated private spaces. Designed for focused work, intimate conversations, or relaxed gatherings.</p>
+</div>
+<!-- Room Card 1: HUSK -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden shadow-ambient transition-transform hover:-translate-y-1 duration-300 border border-outline-variant/30">
+<div class="h-64 md:h-96 w-full relative group">
+<img alt="HUSK Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A serene, minimalist private room in a premium Seoul cafe. Warm sunlight filters through linen curtains onto a small oak table set for two. Soft beige walls, subtle ceramic decor, and a highly polished concrete floor. The lighting is bright and inviting, creating a calm, slow-living aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxdJW0jE70YaSMOywv8UdVC4mTg6bP5Ro7ri0MpV8TWtF3mrbe9xTc6QoQA5YZnLeU3nx6U8SLZOC5VyofltWjuJ2Wlu3bzLY4Xo1fChfmLg31BZVWi7lnAYDd2XKp5Raq3qklNOmFsn8suMxidcaSJFIb9WDEv44t8Wfc0qhNk_LRN98XPUJrpwrRDLWSSnnIiSrRAKsK0H4EJswl_dywK_-ICXw_QzGXpGhI6MxqRYyttI9fkLvgY8J3JRIzTYJ3JY95OyeZtboX"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+<span class="font-label-md text-label-md text-on-surface">Couple Room</span>
+</div>
+</div>
+<div class="p-6 md:p-8 space-y-6">
+<div class="flex justify-between items-start border-b border-outline-variant/30 pb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">HUSK</h2>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="person">person</span> Up to 2 guests</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="payments">payments</span> ₹599/hr</span>
+</div>
+</div>
+<button class="bg-secondary-container text-on-secondary-container font-label-md text-label-md px-6 py-3 rounded-xl hover:bg-secondary-fixed transition-colors border border-outline/20">Select Room</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">An intimate cocoon designed for deep conversations or focused duo work. Features noise-dampening acoustic panels, ambient warm lighting, and a curated selection of slow-brewed teas included.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">High-speed Wi-Fi</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Power Outlets</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Climate Control</span>
+</div>
+</div>
+</article>
+<!-- Room Card 2: HAVEN -->
+<article class="bg-surface-container-low rounded-xl overflow-hidden shadow-ambient transition-transform hover:-translate-y-1 duration-300 border border-outline-variant/30">
+<div class="h-64 md:h-96 w-full relative group">
+<img alt="HAVEN Room" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A spacious, premium private lounge area in a modern cafe. A large, beautiful raw-edge wooden communal table surrounded by comfortable, tactile linen chairs. Large windows let in soft natural light, highlighting potted indoor plants and minimalist architectural details. High-end, warm beige tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf4ecYOtvDx-yw1DP6nGsI7Wlel9zFo0FTdv3L4GQY8-pJnG6o5X5H4LH0vIqvDyAAxwx4gZiVWvIiF0i7Bl2IEULGIMCGn9yzNYCab1HJzu1R5NH0dwZpxAqFo3s7PIljqdEo_xqkQd6oTN3Hu613ySqliujbIh7s7D5H87GST0YnA8OTrM4uHOe6oAfQm_TMu8XnBdV06Ellk9PrxTzzMcaVzWevGfVj9H6pn1hV1vIzn9u-gRvre4ooE-uxJRR30EzzIDTlMBXx"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-sm">
+<span class="font-label-md text-label-md text-on-surface">Group Room</span>
+</div>
+</div>
+<div class="p-6 md:p-8 space-y-6">
+<div class="flex justify-between items-start border-b border-outline-variant/30 pb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-2">HAVEN</h2>
+<div class="flex items-center gap-4 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="groups">groups</span> 3-8 guests</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-lg" data-icon="payments">payments</span> ₹1499/hr</span>
+</div>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md px-6 py-3 rounded-xl hover:opacity-90 transition-opacity">Select Room</button>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">A spacious sanctuary perfect for creative workshops, small celebrations, or team alignments. Features a large raw-edge oak table, comfortable lounge seating, and a smart presentation screen discreetly hidden behind linen panels.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Smart Screen</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Whiteboard</span>
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Private Service Call</span>
+</div>
+</div>
+</article>
+</div>
+<!-- Right Column: Booking Sidebar (Sticky on Desktop) -->
+<aside class="w-full md:w-96 shrink-0 relative">
+<div class="md:sticky md:top-32 bg-surface-container-high rounded-xl p-6 shadow-ambient-lg border border-outline-variant/50 flex flex-col gap-6">
+<div class="border-b border-outline-variant/30 pb-4">
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-1">Book a Space</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Configure your reservation</p>
+</div>
+<!-- Date Selection -->
+<div class="space-y-3">
+<label class="font-label-md text-label-md text-on-surface block">Date</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant" data-icon="calendar_month">calendar_month</span>
+<input class="w-full bg-surface text-on-surface border border-outline-variant rounded-lg py-3 pl-10 pr-4 font-body-md focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-colors" type="date"/>
+</div>
+</div>
+<!-- Time Slot -->
+<div class="space-y-3">
+<label class="font-label-md text-label-md text-on-surface block">Start Time</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="bg-surface text-on-surface border border-outline-variant rounded-lg py-2 font-label-sm text-label-sm hover:border-primary-container transition-colors">Morning</button>
+<button class="bg-primary-container text-on-primary border border-primary-container rounded-lg py-2 font-label-sm text-label-sm shadow-sm">Afternoon</button>
+<button class="bg-surface text-on-surface border border-outline-variant rounded-lg py-2 font-label-sm text-label-sm hover:border-primary-container transition-colors">Evening</button>
+</div>
+</div>
+<!-- Duration -->
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface">Duration</label>
+<span class="font-label-md text-label-md text-primary-container">2 Hours</span>
+</div>
+<input class="w-full h-2 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary-container" max="5" min="1" type="range" value="2"/>
+<div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm px-1">
+<span>1h</span>
+<span>5h</span>
+</div>
+</div>
+<!-- Pre-order Food Toggle -->
+<div class="flex items-center justify-between border-t border-outline-variant/30 pt-6">
+<div>
+<span class="font-label-md text-label-md text-on-surface block">Pre-order Menu items</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Have it ready upon arrival</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary-container"></div>
+</label>
+</div>
+<!-- Summary -->
+<div class="bg-surface rounded-lg p-4 space-y-3 mt-2 border border-outline-variant/20">
+<div class="flex justify-between font-body-md text-body-md text-on-surface">
+<span>HAVEN Room x 2 hrs</span>
+<span>₹2998</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Taxes &amp; Fees</span>
+<span>₹150</span>
+</div>
+<div class="border-t border-outline-variant/30 pt-3 flex justify-between font-headline-sm text-headline-sm text-on-background">
+<span>Total</span>
+<span>₹3148</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md py-4 rounded-xl hover:opacity-90 transition-opacity shadow-md">Confirm Reservation</button>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl md:hidden bg-surface/90 backdrop-blur-lg dark:bg-on-background/90 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] flex justify-around items-center h-16 px-margin-mobile pb-safe">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-90 transition-transform duration-150 active:bg-surface-variant rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-150 cursor-pointer">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-sm text-label-sm">Rooms</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-90 transition-transform duration-150 active:bg-surface-variant rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="restaurant_menu">restaurant_menu</span>
+<span class="font-label-sm text-label-sm">Menu</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:scale-90 transition-transform duration-150 active:bg-surface-variant rounded-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-label-sm text-label-sm">Book</span>
+</div>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-lowest dark:bg-on-background grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto mt-auto pb-24 md:pb-12">
+<div class="col-span-1 md:col-span-2">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed block mb-2">COVE</span>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 COVE Cafe &amp; Lounge. Aizawl, Mizoram.</p>
+</div>
+<div class="col-span-1 md:col-span-2 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4" href="#">Facebook</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

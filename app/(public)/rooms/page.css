@@ -1,0 +1,198 @@
+.rooms-catalog-page {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5) var(--space-16);
+}
+
+@media (min-width: 768px) {
+  .rooms-catalog-page {
+    padding: var(--space-12) var(--space-16) var(--space-24);
+  }
+}
+
+.catalog-header {
+  margin-bottom: var(--space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.catalog-title {
+  font-family: var(--font-display);
+  font-size: var(--text-size-headline-lg-mobile);
+  line-height: var(--text-lh-headline-lg-mobile);
+  color: var(--color-text-heading);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .catalog-title {
+    font-size: var(--text-size-headline-lg);
+    line-height: var(--text-lh-headline-lg);
+  }
+}
+
+.catalog-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-lg);
+  line-height: var(--text-lh-body-lg);
+  color: var(--color-text-secondary);
+  max-width: 44rem;
+}
+
+.rooms-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.room-card {
+  background-color: var(--color-surface-low);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: thin solid var(--color-border-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+  transform: translateY(-4px);
+}
+
+.room-card-img-container {
+  position: relative;
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .room-card-img-container {
+    height: 24rem;
+  }
+}
+
+.room-card-image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-card-image {
+  transform: scale(1.03);
+}
+
+.room-card-badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background-color: rgba(254, 249, 241, 0.95);
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.room-card-body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+  .room-card-body {
+    padding: var(--space-8);
+  }
+}
+
+.room-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-bottom: thin solid var(--color-border-subtle);
+  padding-bottom: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .room-card-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.room-card-title {
+  font-family: var(--font-display);
+  font-size: var(--text-size-headline-md);
+  color: var(--color-text-heading);
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.room-card-meta {
+  display: flex;
+  gap: var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-md);
+  color: var(--color-text-secondary);
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.meta-item .material-symbols-outlined {
+  font-size: var(--text-size-body-lg);
+}
+
+.btn-select-room {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  border: thin solid var(--color-border);
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-md);
+  font-weight: 600;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-align: center;
+}
+
+.btn-select-room:hover {
+  background-color: var(--color-surface-high);
+}
+
+.btn-select-room:active {
+  transform: scale(0.97);
+}
+
+.room-card-description {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-md);
+  line-height: var(--text-lh-body-md);
+  color: var(--color-text-secondary);
+}
+
+.room-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.tag-badge {
+  background-color: var(--color-surface-high);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  font-weight: 500;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COVE Cafe &amp; Lounge - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary": "#361e00",
+                    "surface": "#fef9f1",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#673d00",
+                    "surface-container": "#f2ede5",
+                    "primary-fixed-dim": "#e1c0af",
+                    "primary": "#321f14",
+                    "on-error-container": "#93000a",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e7e2da",
+                    "surface-container-highest": "#e7e2da",
+                    "tertiary-fixed": "#ffddba",
+                    "background": "#fef9f1",
+                    "surface-tint": "#73594b",
+                    "secondary-fixed": "#ede1d0",
+                    "on-tertiary-container": "#d69547",
+                    "tertiary-fixed-dim": "#ffb867",
+                    "on-surface": "#1d1c17",
+                    "secondary-fixed-dim": "#d0c5b5",
+                    "tertiary-container": "#543100",
+                    "on-surface-variant": "#4f453f",
+                    "on-primary-container": "#bb9c8c",
+                    "outline-variant": "#d3c3bc",
+                    "on-background": "#1d1c17",
+                    "surface-container-high": "#ece8e0",
+                    "secondary": "#665d50",
+                    "primary-container": "#4a3428",
+                    "on-tertiary-fixed": "#2b1700",
+                    "on-secondary-fixed": "#201b10",
+                    "outline": "#81746f",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "on-primary-fixed": "#29170d",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed": "#ffdbca",
+                    "inverse-surface": "#32302b",
+                    "inverse-on-surface": "#f5f0e8",
+                    "surface-dim": "#ded9d2",
+                    "on-secondary-container": "#6a6154",
+                    "surface-bright": "#fef9f1",
+                    "secondary-container": "#eadecd",
+                    "on-secondary-fixed-variant": "#4d4639",
+                    "on-primary-fixed-variant": "#594235",
+                    "inverse-primary": "#e1c0af",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f8f3eb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-md": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "20px",
+                    "stack-lg": "48px",
+                    "unit": "8px",
+                    "stack-sm": "12px",
+                    "gutter": "24px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-xl": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .umbra-shadow {
+            box-shadow: 0 20px 40px -10px rgba(74, 52, 40, 0.08);
+        }
+        .bg-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a3428' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-surface-container-low min-h-screen flex flex-col antialiased text-on-surface bg-pattern">
+<!-- TopNavBar (Hidden on Mobile, Displayed on Web) -->
+<nav class="hidden md:flex justify-between items-center px-margin-desktop py-stack-sm max-w-container-max mx-auto fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md">
+<div class="font-display-xl text-display-xl text-primary tracking-tighter">COVE</div>
+<div class="flex gap-gutter items-center">
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer hover:opacity-80 transition-opacity duration-300" href="#">Home</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer hover:opacity-80 transition-opacity duration-300" href="#">Rooms</a>
+<a class="font-label-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer hover:opacity-80 transition-opacity duration-300" href="#">Menu</a>
+</div>
+<button class="bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-widest px-6 py-3 rounded-xl hover:opacity-80 transition-opacity duration-300 active:scale-95">Book Now</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile md:px-margin-desktop py-stack-lg relative z-10 w-full">
+<!-- Login Card -->
+<div class="bg-surface-container-lowest rounded-xl umbra-shadow w-full max-w-[480px] p-stack-lg md:p-[56px] relative overflow-hidden">
+<!-- Subtle Decorative Accent -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-surface-container-lowest via-primary-fixed-dim to-surface-container-lowest opacity-50"></div>
+<!-- Header -->
+<div class="text-center mb-stack-lg">
+<h1 class="font-display-xl text-display-xl text-primary mb-stack-sm tracking-tighter md:hidden">COVE</h1>
+<h2 class="font-headline-md text-headline-md text-primary mb-unit">Welcome back to COVE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your phone number to receive a secure OTP.</p>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-stack-md" onsubmit="event.preventDefault(); document.getElementById('otp-state').classList.remove('hidden'); this.classList.add('hidden');">
+<div class="relative group">
+<label class="sr-only" for="phone">Phone Number</label>
+<div class="flex items-center border-b border-outline-variant focus-within:border-primary-container transition-colors duration-300 pb-unit">
+<div class="flex items-center gap-unit text-on-surface-variant font-body-lg text-body-lg pr-unit border-r border-outline-variant mr-unit cursor-pointer hover:text-primary">
+<span>+1</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</div>
+<input class="w-full bg-transparent border-none p-0 font-body-lg text-body-lg text-on-surface focus:ring-0 placeholder:text-outline-variant outline-none" id="phone" placeholder="(555) 000-0000" required="" type="tel"/>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-xl mt-stack-sm hover:opacity-90 transition-opacity duration-300 active:scale-[0.98]" type="submit">
+                    Send OTP
+                </button>
+</form>
+<!-- OTP State (Hidden initially) -->
+<div class="hidden flex flex-col gap-stack-md animate-[fadeIn_0.3s_ease-out]" id="otp-state">
+<div class="flex justify-between gap-unit">
+<input autofocus="" class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+<input class="w-12 h-14 text-center font-headline-sm text-headline-sm border-b border-outline-variant bg-transparent focus:border-primary-container focus:ring-0 outline-none transition-colors" maxlength="1" type="text"/>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-label-md text-label-md uppercase tracking-widest py-4 rounded-xl mt-stack-sm hover:opacity-90 transition-opacity duration-300 active:scale-[0.98]" type="button">
+                    Verify
+                </button>
+<div class="text-center font-label-sm text-label-sm text-on-surface-variant">
+                    Didn't receive code? <a class="text-primary hover:underline underline-offset-4" href="#">Resend</a>
+</div>
+</div>
+<!-- Alternate Actions -->
+<div class="mt-stack-lg flex flex-col items-center gap-stack-sm">
+<div class="relative w-full flex items-center justify-center">
+<div class="absolute w-full border-t border-outline-variant"></div>
+<span class="bg-surface-container-lowest px-unit font-label-sm text-label-sm text-on-surface-variant relative z-10">or</span>
+</div>
+<button class="w-full bg-transparent border border-outline font-label-md text-label-md text-on-surface uppercase tracking-widest py-4 rounded-xl hover:bg-surface-container transition-colors duration-300 active:scale-[0.98]">
+                    Continue as Guest
+                </button>
+</div>
+</div>
+</main>
+<!-- Simple Footer for Context -->
+<footer class="w-full py-stack-md text-center text-on-surface-variant font-label-sm text-label-sm relative z-10 pb-[calc(1rem+80px)] md:pb-stack-md">
+<p>By continuing, you agree to our <a class="text-primary hover:underline underline-offset-4" href="#">Terms of Service</a> &amp; <a class="text-primary hover:underline underline-offset-4" href="#">Privacy Policy</a>.</p>
+<p class="mt-unit opacity-70">© 2024 COVE Cafe &amp; Lounge.</p>
+</footer>
+<!-- BottomNavBar (Mobile Only - Suppressed per rules since Login is Transactional, but keeping standard structure hidden as placeholder if needed later) -->
+<!-- Suppressed: <nav class="fixed bottom-0 w-full z-50 rounded-t-xl md:hidden bg-surface/90 backdrop-blur-lg shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] h-16 flex justify-around items-center px-margin-mobile pb-safe">...</nav> -->
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<script>
+        // Simple script to auto-advance OTP inputs
+        document.querySelectorAll('#otp-state input').forEach((input, index, inputs) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1 && index < inputs.length - 1) {
+                    inputs[index + 1].focus();
+                }
+            });
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body></html>

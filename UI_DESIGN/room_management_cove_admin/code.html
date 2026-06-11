@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COVE Admin - Room Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#673d00",
+                    "secondary-container": "#eadecd",
+                    "on-surface-variant": "#4f453f",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#73594b",
+                    "primary": "#321f14",
+                    "secondary-fixed-dim": "#d0c5b5",
+                    "tertiary-fixed": "#ffddba",
+                    "primary-fixed-dim": "#e1c0af",
+                    "on-tertiary-fixed": "#2b1700",
+                    "on-surface": "#1d1c17",
+                    "on-secondary-container": "#6a6154",
+                    "primary-fixed": "#ffdbca",
+                    "on-background": "#1d1c17",
+                    "on-error-container": "#93000a",
+                    "inverse-surface": "#32302b",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#bb9c8c",
+                    "surface-container-low": "#f8f3eb",
+                    "surface-dim": "#ded9d2",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#201b10",
+                    "surface": "#fef9f1",
+                    "background": "#fef9f1",
+                    "secondary-fixed": "#ede1d0",
+                    "surface-variant": "#e7e2da",
+                    "tertiary": "#361e00",
+                    "primary-container": "#4a3428",
+                    "inverse-primary": "#e1c0af",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#29170d",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#543100",
+                    "secondary": "#665d50",
+                    "on-primary-fixed-variant": "#594235",
+                    "tertiary-fixed-dim": "#ffb867",
+                    "surface-container": "#f2ede5",
+                    "surface-container-high": "#ece8e0",
+                    "outline-variant": "#d3c3bc",
+                    "surface-bright": "#fef9f1",
+                    "on-secondary-fixed-variant": "#4d4639",
+                    "surface-container-highest": "#e7e2da",
+                    "outline": "#81746f",
+                    "on-tertiary-container": "#d69547",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f5f0e8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "48px",
+                    "stack-md": "24px",
+                    "gutter": "24px",
+                    "unit": "8px",
+                    "stack-sm": "12px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "64px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Playfair Display"
+                    ],
+                    "display-xl": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "headline-sm": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-xl": [
+                            "64px",
+                            {
+                                    "lineHeight": "72px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .umbra-shadow {
+            box-shadow: 0 10px 40px -10px rgba(74, 52, 40, 0.08);
+        }
+        .ambient-glow {
+            box-shadow: 0 0 20px rgba(74, 52, 40, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-[88px] md:pt-[104px] pb-[80px] md:pb-0">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-md dark:bg-on-background/80 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-stack-sm max-w-container-max mx-auto h-[88px] md:h-[104px]">
+<a class="font-display-xl text-display-xl text-primary dark:text-primary-fixed tracking-tighter cursor-pointer transition-all duration-300 active:scale-95" href="#">COVE</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md uppercase tracking-widest cursor-pointer transition-all duration-300 active:scale-95" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-md text-label-md uppercase tracking-widest cursor-pointer transition-all duration-300 active:scale-95" href="#">Rooms</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-md text-label-md uppercase tracking-widest cursor-pointer transition-all duration-300 active:scale-95" href="#">Menu</a>
+<button class="bg-primary-container text-cream px-6 py-3 rounded-xl font-label-md text-label-md text-on-primary uppercase tracking-widest hover:opacity-80 transition-opacity duration-300 cursor-pointer transition-all duration-300 active:scale-95">Book Now</button>
+</div>
+<!-- Mobile Menu Trigger (Visual only for this mockup) -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-md md:py-stack-lg min-h-screen flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-end gap-stack-md border-b border-surface-variant pb-stack-md">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest mb-unit">Admin Dashboard</p>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Room Availability &amp; Bookings</h1>
+</div>
+<button class="bg-primary-container text-on-primary px-6 py-3 rounded-xl font-label-md text-label-md flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+                New Manual Booking
+            </button>
+</header>
+<!-- Top Row: Status Cards & Quick Calendar -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Room Status Cards (Bento style) -->
+<div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- HUSK Room Card -->
+<article class="bg-surface-container-low rounded-xl p-stack-md umbra-shadow border border-surface-variant/50 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-secondary-container rounded-bl-full opacity-50 -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-stack-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">HUSK</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Couple Room</p>
+</div>
+<span class="bg-surface text-primary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-surface-variant">
+<span class="w-2 h-2 rounded-full bg-error"></span> Occupied
+                        </span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">person</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Current Guest</p>
+<p class="font-body-md text-body-md text-primary font-medium">J. Doe &amp; Partner</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-surface-variant/50">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Remaining Time</p>
+<p class="font-headline-sm text-headline-sm text-primary">1h 45m</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Next Action</p>
+<p class="font-body-md text-body-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">cleaning_services</span> Cleaning at 14:00
+                                </p>
+</div>
+</div>
+</div>
+</article>
+<!-- HAVEN Room Card -->
+<article class="bg-surface-container-low rounded-xl p-stack-md umbra-shadow border border-surface-variant/50 relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-surface-variant rounded-bl-full opacity-50 -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="flex justify-between items-start mb-stack-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">HAVEN</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Group Room</p>
+</div>
+<span class="bg-secondary-container text-primary px-3 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-secondary-fixed">
+<span class="w-2 h-2 rounded-full bg-[#4A3428]"></span> Ready
+                        </span>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 opacity-50">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">person_off</span>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Current Guest</p>
+<p class="font-body-md text-body-md text-primary font-medium">None</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4 pt-4 border-t border-surface-variant/50">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Next Booking</p>
+<p class="font-headline-sm text-headline-sm text-primary">15:30</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">Status</p>
+<p class="font-body-md text-body-md text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">check_circle</span> Inspected
+                                </p>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Mini Calendar Widget -->
+<aside class="lg:col-span-4 bg-surface-container-low rounded-xl p-stack-md umbra-shadow">
+<div class="flex justify-between items-center mb-stack-sm">
+<h3 class="font-label-md text-label-md text-primary font-semibold">Today's Timeline</h3>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined">calendar_month</span></button>
+</div>
+<div class="relative h-48 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Timeline lines -->
+<div class="absolute left-10 top-0 bottom-0 w-px bg-surface-variant"></div>
+<div class="space-y-4 relative">
+<!-- Item -->
+<div class="flex items-start gap-4">
+<div class="w-12 text-right pt-1 font-label-sm text-label-sm text-on-surface-variant">12:00</div>
+<div class="relative w-full">
+<div class="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-error border-2 border-surface-container-low"></div>
+<div class="bg-surface rounded-lg p-2 border border-surface-variant shadow-sm">
+<p class="font-label-sm text-label-sm text-primary font-semibold">HUSK: J. Doe</p>
+<p class="text-[10px] text-on-surface-variant">Check-in</p>
+</div>
+</div>
+</div>
+<!-- Item -->
+<div class="flex items-start gap-4">
+<div class="w-12 text-right pt-1 font-label-sm text-label-sm text-on-surface-variant">14:00</div>
+<div class="relative w-full">
+<div class="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-surface-tint border-2 border-surface-container-low"></div>
+<div class="bg-surface rounded-lg p-2 border border-surface-variant shadow-sm opacity-60">
+<p class="font-label-sm text-label-sm text-primary font-semibold">HUSK: Cleaning</p>
+</div>
+</div>
+</div>
+<!-- Item -->
+<div class="flex items-start gap-4">
+<div class="w-12 text-right pt-1 font-label-sm text-label-sm text-on-surface-variant">15:30</div>
+<div class="relative w-full">
+<div class="absolute -left-[21px] top-2 w-2 h-2 rounded-full bg-[#4A3428] border-2 border-surface-container-low"></div>
+<div class="bg-secondary-container/50 rounded-lg p-2 border border-secondary-fixed shadow-sm">
+<p class="font-label-sm text-label-sm text-primary font-semibold">HAVEN: Smith Group</p>
+<p class="text-[10px] text-on-surface-variant">Expected Arrival</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</aside>
+</div>
+<!-- Booking List Section -->
+<section class="bg-surface-container-low rounded-xl umbra-shadow overflow-hidden flex flex-col">
+<!-- Table Header & Controls -->
+<div class="p-stack-md border-b border-surface-variant flex flex-col md:flex-row justify-between items-center gap-4 bg-surface/50">
+<h3 class="font-headline-sm text-headline-sm text-primary">Upcoming Reservations</h3>
+<div class="flex w-full md:w-auto gap-4">
+<div class="relative flex-grow md:flex-grow-0">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full md:w-64 pl-10 pr-4 py-2 rounded-lg bg-surface border border-surface-variant focus:border-primary-container focus:ring-1 focus:ring-primary-container font-body-md text-body-md text-primary placeholder-on-surface-variant/50 transition-colors" placeholder="Search bookings..." type="text"/>
+</div>
+<button class="bg-surface border border-surface-variant p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-variant/30 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="p-4 font-medium border-b border-surface-variant">Guest Name</th>
+<th class="p-4 font-medium border-b border-surface-variant">Room</th>
+<th class="p-4 font-medium border-b border-surface-variant">Date &amp; Time</th>
+<th class="p-4 font-medium border-b border-surface-variant">Duration</th>
+<th class="p-4 font-medium border-b border-surface-variant">Status</th>
+<th class="p-4 font-medium border-b border-surface-variant text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-md text-body-md text-primary">
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="p-4">
+<div class="font-medium">Sarah Jenkins</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">+82 10-1234-5678</div>
+</td>
+<td class="p-4">HUSK</td>
+<td class="p-4">
+<div>Oct 24, 2023</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">18:00</div>
+</td>
+<td class="p-4">2 Hours</td>
+<td class="p-4">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm">Confirmed</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="p-4">
+<div class="font-medium">David Lee Group</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">+82 10-9876-5432</div>
+</td>
+<td class="p-4">HAVEN</td>
+<td class="p-4">
+<div>Oct 25, 2023</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">14:00</div>
+</td>
+<td class="p-4">3 Hours</td>
+<td class="p-4">
+<span class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed rounded-full font-label-sm text-label-sm">Pending Dep.</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-variant/10 transition-colors group">
+<td class="p-4">
+<div class="font-medium">Min-ji Kim</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Online Booking</div>
+</td>
+<td class="p-4">HUSK</td>
+<td class="p-4">
+<div>Oct 25, 2023</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">20:00</div>
+</td>
+<td class="p-4">2 Hours</td>
+<td class="p-4">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm">Confirmed</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-on-surface-variant hover:text-primary transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination area placeholder -->
+<div class="p-4 border-t border-surface-variant bg-surface/30 flex justify-between items-center text-label-sm text-on-surface-variant">
+<span>Showing 1 to 3 of 12 entries</span>
+<div class="flex gap-2">
+<button class="px-2 py-1 rounded bg-surface border border-surface-variant disabled:opacity-50" disabled="">Prev</button>
+<button class="px-2 py-1 rounded bg-surface border border-surface-variant hover:bg-surface-variant">Next</button>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Drawer) - Hidden by default, mapped for conceptual completeness if drawer is triggered -->
+<!-- Not rendering full drawer to keep focus on Canvas per 'Task-Focused' nav suppression rules if this was a sub-page, but it's a top-level Admin page. However, layout requests responsive adaptation. Using TopNavBar for Web, would use drawer/bottom for mobile. -->
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="bg-surface/90 backdrop-blur-lg dark:bg-on-background/90 fixed bottom-0 w-full z-50 rounded-t-xl md:hidden shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)]">
+<div class="flex justify-around items-center h-16 px-margin-mobile pb-safe">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1">home</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1">grid_view</span>
+<span class="font-label-sm text-label-sm">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1">restaurant_menu</span>
+<span class="font-label-sm text-label-sm">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="font-label-sm text-label-sm">Book</span>
+</a>
+</div>
+</nav>
+<style>
+        /* Custom scrollbar for mini timeline */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: theme('colors.surface-variant');
+            border-radius: 20px;
+        }
+    </style>
+</body></html>

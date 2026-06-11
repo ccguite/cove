@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>COVE Cafe &amp; Lounge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1d1c17",
+                        "primary-fixed": "#ffdbca",
+                        "outline": "#81746f",
+                        "surface-container": "#f2ede5",
+                        "on-primary": "#ffffff",
+                        "background": "#fef9f1",
+                        "tertiary-fixed": "#ffddba",
+                        "primary-fixed-dim": "#e1c0af",
+                        "secondary-fixed": "#ede1d0",
+                        "on-secondary-container": "#6a6154",
+                        "secondary-container": "#eadecd",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb867",
+                        "on-tertiary-container": "#d69547",
+                        "surface-bright": "#fef9f1",
+                        "on-surface-variant": "#4f453f",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e7e2da",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1d1c17",
+                        "on-tertiary-fixed-variant": "#673d00",
+                        "inverse-on-surface": "#f5f0e8",
+                        "inverse-surface": "#32302b",
+                        "primary-container": "#4a3428",
+                        "surface-container-high": "#ece8e0",
+                        "surface-dim": "#ded9d2",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e7e2da",
+                        "on-secondary-fixed-variant": "#4d4639",
+                        "primary": "#321f14",
+                        "tertiary": "#361e00",
+                        "on-primary-container": "#bb9c8c",
+                        "surface-tint": "#73594b",
+                        "outline-variant": "#d3c3bc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#543100",
+                        "inverse-primary": "#e1c0af",
+                        "on-secondary-fixed": "#201b10",
+                        "surface-container-low": "#f8f3eb",
+                        "secondary-fixed-dim": "#d0c5b5",
+                        "secondary": "#665d50",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#29170d",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-primary-fixed-variant": "#594235",
+                        "surface": "#fef9f1",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "20px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin-desktop": "64px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-md": ["Inter"],
+                        "display-xl": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Playfair Display"],
+                        "headline-lg-mobile": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "display-xl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .umbra-shadow {
+            box-shadow: 0 20px 40px -10px rgba(74, 52, 40, 0.08);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav aria-label="Top Navigation" class="hidden md:flex bg-background/80 backdrop-blur-md dark:bg-on-background/80 fixed top-0 w-full z-50 bg-background dark:bg-on-background">
+<div class="flex justify-between items-center px-margin-desktop py-stack-sm max-w-container-max mx-auto w-full">
+<a class="font-display-xl text-display-xl text-primary dark:text-primary-fixed tracking-tighter cursor-pointer transition-all duration-300 active:scale-95" href="/">COVE</a>
+<div class="flex items-center gap-stack-md font-label-md text-label-md uppercase tracking-widest">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 cursor-pointer transition-all duration-300 active:scale-95" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 transition-opacity duration-300 cursor-pointer transition-all duration-300 active:scale-95" href="#">Rooms</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed transition-colors hover:opacity-80 transition-opacity duration-300 cursor-pointer transition-all duration-300 active:scale-95" href="#">Menu</a>
+</div>
+<button class="bg-primary-container text-on-primary-container font-label-md text-label-md px-6 py-3 rounded-xl hover:opacity-80 transition-opacity duration-300 cursor-pointer transition-all duration-300 active:scale-95">Book Now</button>
+</div>
+</nav>
+<!-- Mobile Top Header (Simulated for when BottomNav is used) -->
+<header class="md:hidden flex justify-between items-center px-margin-mobile py-stack-sm fixed top-0 w-full z-40 bg-background/90 backdrop-blur-md border-b border-surface-variant">
+<span class="font-headline-md text-headline-md text-primary">COVE</span>
+</header>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 bg-primary">
+<img alt="Ambient cafe setting" class="w-full h-full object-cover opacity-70 mix-blend-overlay" data-alt="A luxurious, high-end cafe interior with a Seoul-inspired minimalist aesthetic. Soft, warm natural light filters through sheer curtains, illuminating clean architectural lines, plush beige seating, and delicate ceramic mugs on light oak tables. The atmosphere is tranquil, premium, and sophisticated, reflecting a tactile modernism style with a focus on creamy whites and espresso brown accents. High-resolution lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy4stc3v1ZsXHPI11viJ9OaOcga4yoNinUm81wBV69w7opV7ZGdnpHkvvP9FLaHgouX-md1MywR_xi2-eTaM4CYptsgJNMfxlWxvZSNl4Mou5keIHfN2Fwp4e4JyLlsLcUjQu64m2DGPNoWUaKOfvJyJlew2D-QJjNyTUlz8404jiGLkw6lB0YuNhOBQRyt-yk-2ZfNJ73etBshM8nv-r1kRBMB7kmyHkbXCKivn_DQafMx2KrFMbqkkWIIIBxUNCD4gN9MgdnyNH-"/>
+</div>
+<div class="relative z-10 text-center px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto flex flex-col items-center gap-stack-md pt-20">
+<h1 class="font-headline-lg-mobile md:font-display-xl text-headline-lg-mobile md:text-display-xl text-on-primary text-shadow-sm">Your Private Escape in Aizawl</h1>
+<p class="font-body-lg text-body-lg text-on-primary/90 max-w-2xl text-shadow-sm">A sanctuary blending Seoul's minimalist cafe culture with authentic local warmth. Experience curated spaces, artisanal coffee, and unparalleled tranquility.</p>
+<div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+<button class="w-full sm:w-auto bg-primary-container text-on-primary-container font-label-md text-label-md px-8 py-4 rounded-xl hover:opacity-90 transition-opacity">Book a Room</button>
+<button class="w-full sm:w-auto bg-transparent border border-on-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-xl hover:bg-on-primary/10 transition-colors">Order Food</button>
+</div>
+</div>
+</section>
+<!-- The Seoul of Aizawl (About) -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center">
+<div class="order-2 lg:order-1 flex flex-col gap-stack-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest">Our Philosophy</span>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">The Seoul of Aizawl</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Step into a space designed to slow down time. Inspired by the refined aesthetics of Korean cafe culture, COVE is an architectural embrace—a place where tactile minimalism meets the comforting hospitality of Aizawl. Every corner, from our sunlit lounges to our private retreats, is crafted for moments of connection and serene solitude.</p>
+<a class="inline-flex items-center gap-2 font-label-md text-label-md text-on-tertiary-container hover:opacity-80 transition-opacity w-fit mt-4" href="#">
+                    Discover our story
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="order-1 lg:order-2 relative aspect-[4/5] rounded-xl overflow-hidden umbra-shadow bg-surface-container-low border border-surface-variant/50">
+<img alt="Cafe Interior" class="w-full h-full object-cover" data-alt="A close-up shot of a minimalist cafe table setting in a serene, sunlit room. A perfectly crafted latte in a handmade ceramic mug sits next to a linen napkin on a smooth, warm oak table. In the background, softly blurred architectural details in cream and beige tones suggest a high-end, tranquil environment. The lighting is soft and diffused, creating gentle, warm shadows characteristic of premium tactile modernism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVRrG0vcTM3nCkgyE3YRmt74yrbu48D_ABS8h8Eq2pml1fx2TEA2SpXltGG2mezlTY8ZrvcaLUFDAOW1AfPs00kAkIosFajkV8CBT8orQcRhdjA-6zQRXp_0ylJs7IkRtMK6hSulp4SyVyMRZM2cH8hvs1XbbJM1lb77tRCMzmMUAuFxQxsjKMkh65syfqux8t7liAARCuvOga5mXGJBsGjvuNR4TVQgmPQNeAA9w8iBghD-0Q2HF58u53UFszDnOPGLAaPDQUK1TE"/>
+</div>
+</div>
+</section>
+<!-- Experience COVE -->
+<section class="py-24 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16 flex flex-col gap-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Experience COVE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">Beyond exceptional coffee, discover curated spaces designed for leisure, play, and memories.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Cat Cafe -->
+<div class="group bg-surface rounded-xl overflow-hidden umbra-shadow border border-surface-variant/30 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Cat Cafe" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A serene cat cafe interior. A fluffy, well-groomed cat rests gracefully on a stylish, modern wooden chair. The background features minimalist, light-wood decor, soft beige walls, and gentle natural lighting. The overall mood is peaceful, premium, and sophisticated, avoiding any cluttered or overly playful aesthetics. Warm, creamy tones dominate the palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4zrpROIgKvD3zfXD7FO4Jjoasv0Dd-3ZfGyo9p04oZmbOAhL-UAS7KM6QKPCrwkGgiD29ytcUohXyMuY5BPmR1yctX1VGs_WWaspFc4FGeweM2Cs37IvAJvV-AxnmT9973Tf8svyQkb-f8NS8XUJ3NFIdDKNNeKp1uvm9IQ18C-ZiGsk6Hf-d_kVvT953wOrm87--LnyMzw9FhYneYlh_I_B88oZfkMNwDlEssMsZOvjthw4Gd39ZtZz4x82TN9xkzqAuhxjpQ8Q3"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Cat Café</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Unwind in the company of our gentle resident felines in a dedicated, peaceful sanctuary.</p>
+</div>
+</div>
+<!-- Pool Table -->
+<div class="group bg-surface rounded-xl overflow-hidden umbra-shadow border border-surface-variant/30 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Pool Table" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A modern, high-end pool table situated in a sophisticated lounge area. The felt is a muted, elegant tone, and the surrounding decor features warm wood paneling, subtle architectural lighting, and minimalist furniture. The lighting highlights the texture of the materials, creating an atmosphere of refined leisure rather than a typical sports bar. Espresso brown and warm beige accents are present." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs1M43Z4yCbvTZu8hzNVtRgB4Ntmr-aUYGpyAYsCw6-5VblmaH1E0TNykciEIMYPixQNqAnhWYbOZZIf9pSgDAoNxxEqxFO8zeRUQrPoUU22X0HhYz3jFQiSAJtER78kVmTXEGma1ENckfZZr-kujYSEu_T8nSv3JunXiQgjpEYFHXfMIaaVKep8mw73RghbV57XTnK5XNpoAKeeOFsNiuEwWy3pyMk1CnV_DWEmqD4eMr97IAF6GMIANesm1qEpa4atDwTPMkLVv_"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Billiards Lounge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Enjoy a relaxed game in our stylishly appointed lounge, perfect for evening gatherings.</p>
+</div>
+</div>
+<!-- Photobooth -->
+<div class="group bg-surface rounded-xl overflow-hidden umbra-shadow border border-surface-variant/30 flex flex-col transition-transform duration-300 hover:-translate-y-1">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Photobooth" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, minimalist photobooth setup integrated into a stylish cafe environment. The booth features clean, architectural lines with a warm beige and cream color scheme. Soft, diffused studio lighting emanates from the booth, casting a gentle glow on the surrounding oak floors and minimalist decor. The vibe is trendy, clean, and Instagram-ready, fitting a premium tactile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPkXduHrgdofMcig4xo0Zz0z4EB5XfSgLShOLjT6-H4SY5tWnEq4C3Ak_G51vRq4EQiNKuD1XNA5_krzcADh8NT1dccsaIAtfeLfA22HiHHd8TVJefE9Y9O6EmHzHUTd2rVL6DioRkvKANP11RzyasXvGGHqWVSE70vtLM0iyiF5udHQ-et6du95xQ58C0PNFQfzdN-6XLlxqS6s_2fTQUqCHRrfsHQqIWTEz4olj7BmF0sscdgid8bf-EQaaW4vcaKAXqVwWFeKbq"/>
+</div>
+<div class="p-stack-md flex flex-col flex-grow gap-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Studio Booth</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-grow">Capture the moment with our premium, Korean-style self-serve photography studio.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BottomNavBar (Mobile Only) -->
+<nav aria-label="Bottom Navigation" class="md:hidden flex justify-around items-center h-16 px-margin-mobile pb-safe fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/90 backdrop-blur-lg dark:bg-on-background/90 shadow-[0_-4px_20px_0_rgba(0,0,0,0.05)] bg-surface/90 dark:bg-on-background/90">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-sm text-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+<span class="font-label-sm text-label-sm mt-1">Rooms</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl">restaurant_menu</span>
+<span class="font-label-sm text-label-sm mt-1">Menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 active:bg-surface-variant active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-xl">calendar_month</span>
+<span class="font-label-sm text-label-sm mt-1">Book</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full py-stack-lg bg-surface-container-lowest dark:bg-on-background mb-16 md:mb-0">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-primary dark:text-primary-fixed">COVE</span>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-x-8 gap-y-4 md:justify-end items-center font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4 transition-all duration-200" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4 transition-all duration-200" href="#">Facebook</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4 transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4 transition-all duration-200" href="#">Contact</a>
+</div>
+<div class="col-span-1 md:col-span-4 mt-8 pt-8 border-t border-surface-variant/50 text-center md:text-left text-on-surface-variant text-sm font-body-md text-body-md text-on-surface dark:text-surface-variant">
+                © 2024 COVE Cafe &amp; Lounge. Aizawl, Mizoram.
+            </div>
+</div>
+</footer>
+</body></html>
