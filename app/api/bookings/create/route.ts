@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Double-booking check
-    const isConflict = await checkSlotConflict(supabase, roomId, date, startTime, durationHours);
+    const isConflict = await checkSlotConflict(supabase, roomId, date, startTime, durationHours, session.user.id);
     if (isConflict) {
       return NextResponse.json({ error: 'Room slot is already booked' }, { status: 409 });
     }

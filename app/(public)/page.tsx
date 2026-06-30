@@ -30,18 +30,39 @@ const FALLBACK_ROOMS: Room[] = [
 
 // Seeded static featured menu items teaser
 const FEATURED_MENU_TEASERS = [
-  { id: 'm1', name: 'Premium Croffle', category: 'Croffles', price: 220, description: 'Freshly baked buttery croissant-waffle topped with vanilla bean ice cream and organic maple glaze.' },
-  { id: 'm2', name: 'Specialty Einspänner', category: 'Signature Drinks', price: 180, description: 'Espresso topped with a thick, rich layer of sweet cold cream, served in the traditional Seoul style.' },
-  { id: 'm3', name: 'Mizo Specialty Latte', category: 'Hot Coffees', price: 160, description: 'Double shot espresso combined with textured milk and a hint of local mountain honey.' },
+  { 
+    id: 'm1', 
+    name: 'Premium Croffle', 
+    category: 'Croffles', 
+    price: 220, 
+    description: 'Freshly baked buttery croissant-waffle topped with vanilla bean ice cream and organic maple glaze.',
+    image: '/images/croffles/classic-butter.png'
+  },
+  { 
+    id: 'm2', 
+    name: 'Specialty Einspänner', 
+    category: 'Signature Drinks', 
+    price: 180, 
+    description: 'Espresso topped with a thick, rich layer of sweet cold cream, served in the traditional Seoul style.',
+    image: '/images/menu/einspanner.png'
+  },
+  { 
+    id: 'm3', 
+    name: 'Mizo Specialty Latte', 
+    category: 'Hot Coffees', 
+    price: 160, 
+    description: 'Double shot espresso combined with textured milk and a hint of local honey.',
+    image: '/images/menu/mizo-latte.png'
+  },
 ];
 
 // Pre-selected high-res photography URLs
 const IMAGE_ASSETS = {
-  hero: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAy4stc3v1ZsXHPI11viJ9OaOcga4yoNinUm81wBV69w7opV7ZGdnpHkvvP9FLaHgouX-md1MywR_xi2-eTaM4CYptsgJNMfxlWxvZSNl4Mou5keIHfN2Fwp4e4JyLlsLcUjQu64m2DGPNoWUaKOfvJyJlew2D-QJjNyTUlz8404jiGLkw6lB0YuNhOBQRyt-yk-2ZfNJ73etBshM8nv-r1kRBMB7kmyHkbXCKivn_DQafMx2KrFMbqkkWIIIBxUNCD4gN9MgdnyNH-',
-  about: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVRrG0vcTM3nCkgyE3YRmt74yrbu48D_ABS8h8Eq2pml1fx2TEA2SpXltGG2mezlTY8ZrvcaLUFDAOW1AfPs00kAkIosFajkV8CBT8orQcRhdjA-6zQRXp_0ylJs7IkRtMK6hSulp4SyVyMRZM2cH8hvs1XbbJM1lb77tRCMzmMUAuFxQxsjKMkh65syfqux8t7liAARCuvOga5mXGJBsGjvuNR4TVQgmPQNeAA9w8iBghD-0Q2HF58u53UFszDnOPGLAaPDQUK1TE',
-  catCafe: 'https://lh3.googleusercontent.com/aida-public/AB6AXuB4zrpROIgKvD3zfXD7FO4Jjoasv0Dd-3ZfGyo9p04oZmbOAhL-UAS7KM6QKPCrwkGgiD29ytcUohXyMuY5BPmR1yctX1VGs_WWaspFc4FGeweM2Cs37IvAJvV-AxnmT9973Tf8svyQkb-f8NS8XUJ3NFIdDKNNeKp1uvm9IQ18C-ZiGsk6Hf-d_kVvT953wOrm87--LnyMzw9FhYneYlh_I_B88oZfkMNwDlEssMsZOvjthw4Gd39ZtZz4x82TN9xkzqAuhxjpQ8Q3',
-  billiards: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAs1M43Z4yCbvTZu8hzNVtRgB4Ntmr-aUYGpyAYsCw6-5VblmaH1E0TNykciEIMYPixQNqAnhWYbOZZIf9pSgDAoNxxEqxFO8zeRUQrPoUU22X0HhYz3jFQiSAJtER78kVmTXEGma1ENckfZZr-kujYSEu_T8nSv3JunXiQgjpEYFHXfMIaaVKep8mw73RghbV57XTnK5XNpoAKeeOFsNiuEwWy3pyMk1CnV_DWEmqD4eMr97IAF6GMIANesm1qEpa4atDwTPMkLVv_',
-  studio: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCPkXduHrgdofMcig4xo0Zz0z4EB5XfSgLShOLjT6-H4SY5tWnEq4C3Ak_G51vRq4EQiNKuD1XNA5_krzcADh8NT1dccsaIAtfeLfA22HiHHd8TVJefE9Y9O6EmHzHUTd2rVL6DioRkvKANP11RzyasXvGGHqWVSE70vtLM0iyiF5udHQ-et6du95xQ58C0PNFQfzdN-6XLlxqS6s_2fTQUqCHRrfsHQqIWTEz4olj7BmF0sscdgid8bf-EQaaW4vcaKAXqVwWFeKbq'
+  hero: '/images/home/hero.png',
+  about: '/images/home/about.png',
+  catCafe: '/images/experiences/cat.png',
+  billiards: '/images/experiences/pool.png',
+  studio: '/images/experiences/booth.png'
 };
 
 export default async function Page() {
@@ -128,7 +149,7 @@ export default async function Page() {
               <div key={room.id} className="room-preview-card">
                 <div className="room-card-img-container">
                   <Image
-                    src={room.slug === 'husk' ? IMAGE_ASSETS.about : IMAGE_ASSETS.hero}
+                    src={room.image_url || (room.slug === 'husk' ? IMAGE_ASSETS.about : IMAGE_ASSETS.hero)}
                     alt={room.name}
                     fill
                     className="room-card-img"
@@ -153,6 +174,45 @@ export default async function Page() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Menu Teaser Section */}
+      <section className="menu-teaser-section">
+        <div className="menu-teaser-container">
+          <div className="section-header-centered">
+            <span className="section-label">On the Menu</span>
+            <h2 className="section-title">Seoul Delicacies</h2>
+            <p className="section-subtitle">
+              Sip and bite into curated coffees and fresh croffles styled after Seoul's finest cafés.
+            </p>
+          </div>
+          <div className="menu-teaser-grid">
+            {FEATURED_MENU_TEASERS.map((item) => (
+              <div key={item.id} className="menu-teaser-card">
+                <div className="menu-teaser-img-container">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="menu-teaser-img"
+                  />
+                </div>
+                <div className="menu-teaser-content">
+                  <div className="menu-item-meta">
+                    <span className="menu-item-cat">{item.category}</span>
+                    <span className="menu-item-price">₹{item.price}</span>
+                  </div>
+                  <h3 className="menu-item-title">{item.name}</h3>
+                  <p className="menu-item-description">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="menu-teaser-footer">
+            <Link href="/menu" className="btn btn-menu-link">View Full Menu</Link>
           </div>
         </div>
       </section>
@@ -219,34 +279,6 @@ export default async function Page() {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Menu Teaser Section */}
-      <section className="menu-teaser-section">
-        <div className="menu-teaser-container">
-          <div className="section-header-centered">
-            <span className="section-label">On the Menu</span>
-            <h2 className="section-title">Seoul Delicacies</h2>
-            <p className="section-subtitle">
-              Sip and bite into curated coffees and fresh croffles styled after Seoul's finest cafés.
-            </p>
-          </div>
-          <div className="menu-teaser-grid">
-            {FEATURED_MENU_TEASERS.map((item) => (
-              <div key={item.id} className="menu-teaser-card">
-                <div className="menu-item-meta">
-                  <span className="menu-item-cat">{item.category}</span>
-                  <span className="menu-item-price">₹{item.price}</span>
-                </div>
-                <h3 className="menu-item-title">{item.name}</h3>
-                <p className="menu-item-description">{item.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="menu-teaser-footer">
-            <Link href="/menu" className="btn btn-menu-link">View Full Menu</Link>
           </div>
         </div>
       </section>

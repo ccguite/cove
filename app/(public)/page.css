@@ -85,20 +85,19 @@
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background-color: var(--color-primary);
+  background-color: #000;
   z-index: 0;
 }
 
 .hero-bg-img {
   object-fit: cover;
-  opacity: 0.65;
-  mix-blend-mode: overlay;
+  opacity: 0.5; /* Keep original colors but darken to make white text readable */
 }
 
 .hero-vignette {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(74, 52, 40, 0.4) 0%, rgba(74, 52, 40, 0.7) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.6) 100%);
   z-index: 1;
 }
 
@@ -514,13 +513,43 @@
 
 .menu-teaser-card {
   background-color: var(--color-surface-white);
-  padding: var(--space-6);
   border-radius: var(--radius-xl);
   border: thin solid var(--color-border-subtle);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.menu-teaser-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-teaser-img-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: var(--color-surface-low);
+}
+
+.menu-teaser-img {
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu-teaser-card:hover .menu-teaser-img {
+  transform: scale(1.05);
+}
+
+.menu-teaser-content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex-grow: 1;
 }
 
 .menu-item-meta {

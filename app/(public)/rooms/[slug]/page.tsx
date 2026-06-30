@@ -1,9 +1,50 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { createSupabaseServerClient } from '@/lib/supabase/serverClient';
+import type { Metadata } from 'next';
+import { createSupabasePublicClient } from '@/lib/supabase/serverClient';
 import type { Room } from '@/lib/supabase/types';
 import './page.css';
+
+export const revalidate = 3600; // Cache page for 1 hour (ISR)
+
+interface Props {
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const resolvedParams = await params;
+  const supabase = createSupabasePublicClient();
+  
+  const { data: room } = await supabase
+    .from('rooms')
+    .select('*')
+    .eq('slug', resolvedParams.slug)
+    .single();
+
+  if (!room) {
+    return {
+      title: 'Room Not Found — COVE',
+    };
+  }
+
+  return {
+    title: `${room.name} Experience Room — COVE`,
+    description: `${room.description || ''} Book starting at ₹${room.price_per_hour}/hour.`,
+    openGraph: {
+      title: `${room.name} Lounge — COVE`,
+      description: `Reserve the ${room.name} lounge room in Aizawl, Mizoram.`,
+      images: [
+        {
+          url: `/images/og-${room.slug}.jpg`,
+          width: 1200,
+          height: 630,
+          alt: `${room.name} Experience Room`,
+        },
+      ],
+    },
+  };
+}
 
 const FALLBACK_ROOMS: Record<string, Room> = {
   husk: {
@@ -16,10 +57,10 @@ const FALLBACK_ROOMS: Record<string, Room> = {
     description: 'An intimate cocoon designed for deep conversations or focused duo work. Features noise-dampening acoustic panels, ambient warm lighting, and a curated selection of slow-brewed teas included.',
     created_at: '',
   },
-  haven: {
+  movietopia: {
     id: '2',
-    name: 'Haven',
-    slug: 'haven',
+    name: 'Movietopia',
+    slug: 'movietopia',
     min_pax: 3,
     max_pax: 8,
     price_per_hour: 1499,
@@ -34,10 +75,10 @@ const AMENITY_DETAILS: Record<string, Array<{ icon: string; title: string; desc:
     { icon: 'power', title: 'Power Outlets', desc: 'Ample Type C and universal plugs available directly on the table.' },
     { icon: 'thermostat', title: 'Climate Control', desc: 'Individual AC unit with smart remote to customize your comfort.' },
   ],
-  haven: [
+  movietopia: [
     { icon: 'tv', title: 'Smart Screen', desc: '55" Ultra HD display with wireless casting and HDMI inputs.' },
     { icon: 'edit_note', title: 'Whiteboard', desc: 'Magnetic glass whiteboard with markers and cleaning kit provided.' },
-    { icon: 'call_receive', title: 'Private Service Call', desc: 'Digital tablet to place café orders directly to your room.' },
+    { icon: 'room_service', title: 'Private Service Call', desc: 'Digital tablet to place café orders directly to your room.' },
   ],
 };
 
@@ -46,7 +87,7 @@ const IMAGE_ASSETS: Record<string, string[]> = {
     'https://lh3.googleusercontent.com/aida-public/AB6AXuCxdJW0jE70YaSMOywv8UdVC4mTg6bP5Ro7ri0MpV8TWtF3mrbe9xTc6QoQA5YZnLeU3nx6U8SLZOC5VyofltWjuJ2Wlu3bzLY4Xo1fChfmLg31BZVWi7lnAYDd2XKp5Raq3qklNOmFsn8suMxidcaSJFIb9WDEv44t8Wfc0qhNk_LRN98XPUJrpwrRDLWSSnnIiSrRAKsK0H4EJswl_dywK_-ICXw_QzGXpGhI6MxqRYyttI9fkLvgY8J3JRIzTYJ3JY95OyeZtboX',
     'https://lh3.googleusercontent.com/aida-public/AB6AXuDVRrG0vcTM3nCkgyE3YRmt74yrbu48D_ABS8h8Eq2pml1fx2TEA2SpXltGG2mezlTY8ZrvcaLUFDAOW1AfPs00kAkIosFajkV8CBT8orQcRhdjA-6zQRXp_0ylJs7IkRtMK6hSulp4SyVyMRZM2cH8hvs1XbbJM1lb77tRCMzmMUAuFxQxsjKMkh65syfqux8t7liAARCuvOga5mXGJBsGjvuNR4TVQgmPQNeAA9w8iBghD-0Q2HF58u53UFszDnOPGLAaPDQUK1TE'
   ],
-  haven: [
+  movietopia: [
     'https://lh3.googleusercontent.com/aida-public/AB6AXuCf4ecYOtvDx-yw1DP6nGsI7Wlel9zFo0FTdv3L4GQY8-pJnG6o5X5H4LH0vIqvDyAAxwx4gZiVWvIiF0i7Bl2IEULGIMCGn9yzNYCab1HJzu1R5NH0dwZpxAqFo3s7PIljqdEo_xqkQd6oTN3Hu613ySqliujbIh7s7D5H87GST0YnA8OTrM4uHOe6oAfQm_TMu8XnBdV06Ellk9PrxTzzMcaVzWevGfVj9H6pn1hV1vIzn9u-gRvre4ooE-uxJRR30EzzIDTlMBXx',
     'https://lh3.googleusercontent.com/aida-public/AB6AXuAy4stc3v1ZsXHPI11viJ9OaOcga4yoNinUm81wBV69w7opV7ZGdnpHkvvP9FLaHgouX-md1MywR_xi2-eTaM4CYptsgJNMfxlWxvZSNl4Mou5keIHfN2Fwp4e4JyLlsLcUjQu64m2DGPNoWUaKOfvJyJlew2D-QJjNyTUlz8404jiGLkw6lB0YuNhOBQRyt-yk-2ZfNJ73etBshM8nv-r1kRBMB7kmyHkbXCKivn_DQafMx2KrFMbqkkWIIIBxUNCD4gN9MgdnyNH-'
   ],
@@ -56,7 +97,7 @@ const IMAGE_ASSETS: Record<string, string[]> = {
 export async function generateStaticParams() {
   return [
     { slug: 'husk' },
-    { slug: 'haven' },
+    { slug: 'movietopia' },
   ];
 }
 
@@ -67,14 +108,14 @@ interface RoomDetailPageProps {
 export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
   const { slug } = await params;
 
-  if (slug !== 'husk' && slug !== 'haven') {
+  if (slug !== 'husk' && slug !== 'movietopia') {
     notFound();
   }
 
   let room: Room = FALLBACK_ROOMS[slug];
 
   try {
-    const supabase = createSupabaseServerClient();
+    const supabase = createSupabasePublicClient();
     const { data } = await supabase.from('rooms').select('*').eq('slug', slug).single();
     if (data) {
       room = data as Room;
@@ -108,7 +149,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
           <div className="gallery-showcase">
             <div className="main-image-box">
               <Image
-                src={images[0]}
+                src={room.image_url || images[0]}
                 alt={`${room.name} room view`}
                 fill
                 priority
@@ -116,7 +157,7 @@ export default async function RoomDetailPage({ params }: RoomDetailPageProps) {
               />
             </div>
             <div className="gallery-thumbnails">
-              {images.map((img, idx) => (
+              {(room.image_url ? [room.image_url, ...images.slice(1)] : images).map((img, idx) => (
                 <div key={idx} className="thumbnail-box">
                   <Image
                     src={img}

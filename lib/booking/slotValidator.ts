@@ -47,7 +47,8 @@ export async function checkSlotConflict(
   roomId: string,
   date: string,
   startTimeStr: string,
-  durationHours: number
+  durationHours: number,
+  excludeUserId?: string
 ): Promise<boolean> {
   const startMinutes = timeStringToMinutes(startTimeStr);
   const endMinutes = startMinutes + durationHours * 60;
@@ -73,13 +74,16 @@ export async function checkSlotConflict(
   // 2. Fetch Active Slot Locks (TTL 10 mins)
   const { data: locks } = await supabase
     .from('slot_locks')
-    .select('start_time, duration_hours')
+    .select('start_time, duration_hours, locked_by')
     .eq('room_id', roomId)
     .eq('date', date)
     .gt('expires_at', new Date().toISOString());
 
   if (locks) {
     for (const l of locks) {
+      if (excludeUserId && l.locked_by === excludeUserId) {
+        continue; // Skip the lock created by the current user
+      }
       const lStart = timeStringToMinutes(l.start_time);
       const lEnd = lStart + l.duration_hours * 60;
       if (startMinutes < lEnd && lStart < endMinutes) {

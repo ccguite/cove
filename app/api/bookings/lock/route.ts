@@ -40,7 +40,8 @@ export async function POST(req: NextRequest) {
         date,
         start_time: startTime,
         duration_hours: durationHours,
-        expires_at: expiresAt
+        expires_at: expiresAt,
+        locked_by: session.user.id
       })
       .select()
       .single();

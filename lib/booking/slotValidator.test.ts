@@ -93,4 +93,40 @@ describe('Database Conflict Detections', () => {
     const noConflict = await checkSlotConflict(mockSupabase, 'room-1', '2026-06-12', '10:00', 2);
     expect(noConflict).toBe(false);
   });
+
+  it('should handle slot locks and excludeUserId parameter correctly', async () => {
+    const mockSupabaseWithLocks = {
+      from: vi.fn().mockImplementation((table) => {
+        return {
+          select: () => ({
+            eq: () => ({
+              eq: () => ({
+                eq: () => ({
+                  data: [], // no bookings
+                  error: null,
+                }),
+                gt: () => ({
+                  data: table === 'slot_locks' ? [
+                    { start_time: '14:00:00', duration_hours: 2, locked_by: 'user-123' }
+                  ] : [],
+                })
+              })
+            })
+          })
+        };
+      })
+    } as any;
+
+    // 1. Conflict check for the slot [14:00, 16:00) with no excludeUserId
+    const c1 = await checkSlotConflict(mockSupabaseWithLocks, 'room-1', '2026-06-12', '14:00', 2);
+    expect(c1).toBe(true);
+
+    // 2. Conflict check for the slot [14:00, 16:00) with matching excludeUserId -> should be ignored (no conflict)
+    const c2 = await checkSlotConflict(mockSupabaseWithLocks, 'room-1', '2026-06-12', '14:00', 2, 'user-123');
+    expect(c2).toBe(false);
+
+    // 3. Conflict check for the slot [14:00, 16:00) with non-matching excludeUserId -> should be conflict
+    const c3 = await checkSlotConflict(mockSupabaseWithLocks, 'room-1', '2026-06-12', '14:00', 2, 'user-999');
+    expect(c3).toBe(true);
+  });
 });

@@ -17,6 +17,7 @@ export type Room = {
   max_pax: number;
   price_per_hour: number;
   description: string | null;
+  image_url?: string | null;
   created_at: string;
 };
 
@@ -38,6 +39,7 @@ export type MenuItem = {
   image_url: string | null;
   is_available: boolean;
   is_seasonal: boolean;
+  only_for_rooms: boolean;
   created_at: string;
 };
 

@@ -64,9 +64,9 @@ export default function PersonalDetailsForm({
 
   return (
     <section className="details-section">
-      <h3 className="details-title">Personal Details</h3>
+      <h3 className="details-title">My Details</h3>
       <form className="details-form" onSubmit={handleSave}>
-        <div className="form-field form-col-span-2">
+        <div className="form-field">
           <label className="form-label" htmlFor="fullName">Full Name</label>
           <input
             type="text"
@@ -105,13 +105,13 @@ export default function PersonalDetailsForm({
         </div>
 
         {error && (
-          <div className="form-error-message form-col-span-2" role="alert">
+          <div className="form-error-message" role="alert">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="form-success-message form-col-span-2" role="alert">
+          <div className="form-success-message" role="alert">
             Profile changes saved successfully!
           </div>
         )}

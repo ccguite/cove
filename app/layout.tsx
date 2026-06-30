@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
+import ScrollToTop from '@/components/ScrollToTop';
 import '../styles/global.css';
 
 const playfair = Playfair_Display({
@@ -17,6 +18,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://coveaizawl.com'),
   title: 'COVE — Korean-Inspired Café & Lounge, Aizawl',
   description:
     'COVE is a premium Korean-inspired café and entertainment lounge in Aizawl, Mizoram. Book private rooms, order food, and explore specialty coffee, a cat café, pool table, and photobooth.',
@@ -35,7 +37,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body>{children}</body>
+      <body>
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   );
 }
+

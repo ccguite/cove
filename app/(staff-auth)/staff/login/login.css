@@ -1,0 +1,256 @@
+/* ─────────────────────────────────────────────
+   Staff Login Portal — CSS
+   Darker, more professional tone vs customer /login
+   ───────────────────────────────────────────── */
+
+.staff-login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1210;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(74, 52, 40, 0.35) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(120, 80, 50, 0.2) 0%, transparent 50%);
+}
+
+/* Portal badge at top */
+.staff-portal-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.staff-portal-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.staff-portal-wordmark {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e8c9a0;
+  letter-spacing: 0.12em;
+}
+
+.staff-portal-badge {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(232, 201, 160, 0.55);
+  border: 1px solid rgba(232, 201, 160, 0.2);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.staff-back-link {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  color: rgba(232, 201, 160, 0.5);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s;
+}
+
+.staff-back-link:hover {
+  color: #e8c9a0;
+}
+
+/* Center the card */
+.staff-login-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-5);
+}
+
+.staff-login-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8) var(--space-8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.04) inset;
+  animation: staffFadeIn 0.35s ease-out both;
+}
+
+@keyframes staffFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Lock icon */
+.staff-lock-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, rgba(74,52,40,0.8), rgba(120,80,50,0.6));
+  border: 1px solid rgba(232,201,160,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-5);
+}
+
+.staff-lock-icon .material-symbols-outlined {
+  font-size: 26px;
+  color: #e8c9a0;
+}
+
+.staff-login-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f0dfc0;
+  text-align: center;
+  margin-bottom: var(--space-1);
+}
+
+.staff-login-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-sm);
+  color: rgba(232, 201, 160, 0.5);
+  text-align: center;
+  margin-bottom: var(--space-7);
+}
+
+/* Error banner */
+.staff-error-banner {
+  background-color: rgba(220, 38, 38, 0.12);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.staff-error-banner .material-symbols-outlined {
+  font-size: 18px;
+  color: #f87171;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.staff-error-banner p {
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-sm);
+  color: #fca5a5;
+  line-height: 1.4;
+}
+
+/* Form */
+.staff-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.staff-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.staff-input-label {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  font-weight: 600;
+  color: rgba(232, 201, 160, 0.65);
+  letter-spacing: 0.04em;
+}
+
+.staff-input-field {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-size-body-md);
+  color: #f0dfc0;
+  transition: border-color 0.2s, background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.staff-input-field::placeholder {
+  color: rgba(232, 201, 160, 0.25);
+}
+
+.staff-input-field:focus {
+  border-color: rgba(232, 201, 160, 0.45);
+  background-color: rgba(255, 255, 255, 0.09);
+  outline: none;
+}
+
+.staff-input-field:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Submit button */
+.staff-btn-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #6b3f26, #8b5430);
+  color: #f0dfc0;
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-md);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: var(--space-4);
+  border-radius: var(--radius-xl);
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+  margin-top: var(--space-2);
+}
+
+.staff-btn-submit:hover {
+  opacity: 0.88;
+}
+
+.staff-btn-submit:active {
+  transform: scale(0.98);
+}
+
+.staff-btn-submit:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Customer redirect note */
+.staff-customer-note {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  text-align: center;
+}
+
+.staff-customer-note p {
+  font-family: var(--font-body);
+  font-size: var(--text-size-label-sm);
+  color: rgba(232, 201, 160, 0.35);
+}
+
+.staff-customer-note a {
+  color: rgba(232, 201, 160, 0.65);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.staff-customer-note a:hover {
+  color: #e8c9a0;
+}

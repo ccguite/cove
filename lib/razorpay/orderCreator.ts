@@ -10,11 +10,20 @@ export function getRazorpayInstance(): Razorpay {
   });
 }
 
-/**
- * Creates an order in Razorpay.
- * Amount is converted from Rupees to Paise (multiplied by 100).
- */
 export async function createRazorpayOrder(amountRupees: number, receiptId: string) {
+  const keyId = process.env.RAZORPAY_KEY_ID;
+  const keySecret = process.env.RAZORPAY_KEY_SECRET;
+
+  if (!keyId || !keySecret || keyId.trim() === '' || keySecret.trim() === '') {
+    return {
+      id: `order_mock_${Math.random().toString(36).substring(2, 11)}`,
+      amount: Math.round(amountRupees * 100), // convert to paise
+      currency: 'INR',
+      receipt: receiptId,
+      status: 'created',
+    };
+  }
+
   const razorpay = getRazorpayInstance();
   const options = {
     amount: Math.round(amountRupees * 100), // convert to paise
@@ -23,3 +32,4 @@ export async function createRazorpayOrder(amountRupees: number, receiptId: strin
   };
   return await razorpay.orders.create(options);
 }
+
